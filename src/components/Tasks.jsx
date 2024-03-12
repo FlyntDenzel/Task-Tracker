@@ -1,12 +1,13 @@
+import Task from "./Task"
 
-const Task = ({ tasks }) => {
+const Tasks = ({ tasks }) => {
       return (
     <>
         {tasks.map((task) => (
-            <h3 key={task.id} className="pl-5">{task.text}</h3>
+            <Task key={task.id} task={task} className="pl-5" />
         ))}
     </>
   )
 }
 
-export default Task
+export default Tasks
