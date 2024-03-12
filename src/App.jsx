@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Header from "./components/Header"
 import Tasks from "./components/Tasks"
+import AddTask from "./components/AddTask"
 
 const App = () => {
   // const name = 'Denzel'
@@ -40,8 +41,9 @@ const toggleReminder = (id) => {
 
   return (
     <div className="flex justify-center">
-      <div className="border border-blue-500 rounded-md h-[350px] w-4/5 m-2">
+      <div className="border border-blue-500 rounded-md h-full w-full m-2">
         <Header />
+        <AddTask />
         {tasks.length > 0 ?<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/> : 'No Tasks Found'}
       </div>
     </div>
