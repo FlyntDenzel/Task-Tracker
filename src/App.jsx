@@ -56,7 +56,7 @@ const App = () => {
     <div className="flex justify-center">
       <div className="border border-blue-500 rounded-md h-full w-full m-2">
         <Header onShow={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
-        {showAddTask && <AddTask />}
+        {showAddTask && <AddTask onAdd={addTask}/>}
         {tasks.length > 0 ? (
           <Tasks
             tasks={tasks}
