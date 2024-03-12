@@ -1,3 +1,5 @@
+import { FaTimes } from 'react-icons/fa'
+
 const Task = ({ task }) => {
   return (
     <div className="bg-gray-200 m-5 py-1 p-2 font-bold rounded-md">
