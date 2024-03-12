@@ -27,11 +27,22 @@ const App = () => {
         reminder: false
     },
 ] )
+
+//function for deleting task
+const deleteTask = (id) => {
+  setTasks(tasks.filter((task) => task.id !== id))
+}
+
+// function to toggle reminder
+const toggleReminder = (id) => {
+  setTasks( tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task) )
+}
+
   return (
     <div className="flex justify-center">
       <div className="border border-blue-500 rounded-md h-[350px] w-4/5 m-2">
         <Header />
-        <Tasks tasks={tasks}/>
+        {tasks.length > 0 ?<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/> : 'No Tasks Found'}
       </div>
     </div>
   )
